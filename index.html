@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>COLOR FLIP</title>
+        <style>
+            *
+            {
+                padding: 0px;
+                margin: 0px;
+            }
+
+            #container
+            {
+                
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+                height: 100vh;
+            }
+            button
+            {
+                margin-bottom: 100px;
+                padding: 16px 94px;
+                background-color: black;
+               border: none;
+                border-radius: 8px;
+                color: white;
+                font-size: 18px;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="container">
+            <button id="button">Click Me!</button>
+        </div>
+
+        <script>
+
+          let  container = document.getElementById('container');
+          let btn = document.getElementById('button');
+          let color = ['red', 'blue', 'violet'];
+            btn.addEventListener('click', function colorChange()
+            {
+                let randomNumber = getRandomnum();
+                console.log(randomNumber);
+                document.getElementById('container').style.backgroundColor = color[randomNumber];
+
+            }) ;
+
+            function getRandomnum()
+            {
+                return Math.floor(Math.random()*color.length);//Math.random returns number between 0 & 1;
+            }
+        </script>
+    </body>
+</html>
